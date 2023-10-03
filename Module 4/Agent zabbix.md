@@ -1,14 +1,14 @@
-становка агента из репозитория Debian/Ubuntu
-...
+Установка агента из репозитория Debian/Ubuntu
+```
 # apt install zabbix-agent
-...
+```
 Установка агента в Windows
 Скачать с сайта
 
 Список элементов агента
-...
+```
 # zabbix_agentd -p
-...
-...
+```
+```
 # zabbix_agentd -p | grep agent.version
-...
+```
