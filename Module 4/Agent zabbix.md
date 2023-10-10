@@ -96,7 +96,25 @@ https://www.zabbix.com/download_agents
 # zabbix_agentd -t system.sw.packages
 ```
 
+Проверка получения данных zabbix сервера с агентов
+
+Устанавливаем утилиту на zabbix сервер
+
+```
+apt-get install zabbix-get
+```
+Проверка связи с агентом
+
+```
+zabbix_get -s IP/DNSNAME -p 10050 -k agent.version
+
+```
+
+
 Добавить узлы в Zabbix
 
+
+
 Не присоединять никакие шаблоны.
+
 Создать простые проверки SSH и RDP для агентов
