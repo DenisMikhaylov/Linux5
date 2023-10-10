@@ -57,6 +57,10 @@ sudo systemctl start zabbix-agent
 
 Установка агента в Windows
 
+Установка агента Zabbix Обновление базы данных пакетов и установка агента Zabbix:
+```
+https://www.zabbix.com/download_agents
+```
 Шаг 1. Загрузка программы установки агента Zabbix Начните с загрузки программы установки агента Zabbix для Windows с официального сайта Zabbix.
 
 
