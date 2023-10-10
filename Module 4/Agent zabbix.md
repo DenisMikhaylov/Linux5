@@ -1,5 +1,12 @@
 Установить агента на red os
 
+Процедура установки последней версии агента на сайтек Zabbix
+```
+https://www.zabbix.com/download?zabbix=6.4&os_distribution=red_hat_enterprise_linux&os_version=9&components=agent&db=&ws=
+```
+
+Упращенная инсталяция агента
+
 Шаг 1: Установка агента Zabbix Выполните следующую команду для установки агента Zabbix:
 ```
 dnf install zabbix-agent
@@ -19,6 +26,15 @@ systemctl start zabbix-agent
 ```
 
 Установить агента на gate
+
+Процедура установки последней версии агента на сайтек Zabbix
+```
+https://www.zabbix.com/download?zabbix=6.4&os_distribution=debian&os_version=11&components=agent&db=&ws=
+```
+
+
+Упращенная инсталяция агента
+
 
 Установка агента Zabbix Обновление базы данных пакетов и установка агента Zabbix:
 ```
