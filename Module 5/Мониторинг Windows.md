@@ -51,7 +51,7 @@ Host: CLIENTN
   Items
     Name: Processor total
     Type: agent zabbix active
-    Key: perf_counter[\"\Processor(_Total)% Processor Time\",60]
+    Key: perf_counter_en["\Processor(_Total)\% Processor Time",60]
 ```
 ```
 Host: CLIENTN
