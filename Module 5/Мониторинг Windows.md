@@ -15,7 +15,8 @@ Alert - Actions - Auto registration
 Подключиться к Windows сервер
 
 Настройка агента на активный режим
-Отредактировать файл конфигурации агента и перезапустить службу агента
+
+Отредактировать файл конфигурации агента 
 
 C:\Program Files\Zabbix Agent\zabbix_agentd.conf
 
@@ -26,8 +27,62 @@ ListenIP=0.0.0.0
 ServerActive=<ip address zabbix or Name>
 Hostname=CLIENTN
 ```
+перезапустить службу агента
+
+```
+get-service 'zabbix agent' | Restart-Service
+```
+В веб интерфейсе zabbix открывает "Data collection" - 'Host'
+
+
+Удаляем хост от windows.
+
+Ждем автоматичекой регистрации активного клиента.
+Проверяем, создание нового хоста с именем CLIENTN
 
 Создание элемента мониторинга 
 
-perf_counter[\"\Processor(_Total)% Processor Time\",60]
+В веб интерфейсе zabbix открывает "Data collection" - 'Host'
 
+```
+Host: CLIENTN
+...
+  Items
+    Name: Processor total
+    Type: agent zabbix active
+    Key: perf_counter[\"\Processor(_Total)% Processor Time\",60]
+```
+```
+Host: CLIENTN
+...
+  Items
+    Name: Event 50 
+    Type: agent zabbix active
+    Key: eventlog[System,,"Warning",,50,,skip]
+```
+```
+Host: CLIENTN
+...
+  Items
+    Name: Error drive
+    Type: agent zabbix active
+    Key: eventlog[System,,"Warning",,153,,skip]
+```
+```
+Host: CLIENTN
+...
+  Items
+    Name: WMI object disk freespace
+    Type: agent zabbix active
+    Key: wmi.get[root\cimv2,SELECT FreeSpace FROM Win32_LogicalDisk WHERE DeviceID='C:']
+
+```
+```
+Host: CLIENTN
+...
+  Items
+    Name: WMI object version bios
+    Type: agent zabbix active
+    Key: wmi.get[root\cimv2,SELECT version FROM Win32_bios']
+
+```
