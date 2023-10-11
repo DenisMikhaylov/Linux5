@@ -83,6 +83,62 @@ Host: CLIENTN
   Items
     Name: WMI object version bios
     Type: agent zabbix active
-    Key: wmi.get[root\cimv2,SELECT version FROM Win32_bios']
+    Key: wmi.get[root\cimv2,SELECT version FROM Win32_bios]
+
+```
+```
+Host: CLIENTN
+...
+  Items
+    Name: WMI object product baseboard
+    Type: agent zabbix active
+    Key: wmi.get[root\cimv2,SELECT product FROM Win32_basedoard]
+    Populates host inventory field: model
+```
+```
+Host: CLIENTN
+...
+  Items
+    Name: WMI object serial number baseboard
+    Type: agent zabbix active
+    Key: wmi.get[root\cimv2,SELECT serialnumber FROM Win32_basedoard]
+    Populates host inventory field: Chassis
+```
+
+Создание пользовательских макросов
+Глобальные макросы: 
+
+Чтобы создать глобальный макрос, перейдите в меню Administration >  Macros 
+
+Нажимаем Add
+```
+Макрос: {$DISK_NAME}
+Значение: c:
+Описание: Макрос для диска с:
+```
+```
+Макрос:{$THRESHOLDCPU:WAR} 
+Значение: 50
+Описание: Предупреждение значение cpu
+```
+```
+Макрос:{$THRESHOLDCPU:CRIT} 
+Значение: 70
+Описание: Максимальное значение cpu
+```
+```
+Макрос:{$THRESHOLDDISK:LOW} 
+Значение: 5
+Описание: Минимальное свободное место в процентах
+```
+
+Создание элемента с использованием макроса 
+```
+Host: CLIENTN
+...
+  Items
+    Name: WMI object disk {@DISK_NAME} freespace
+    Type: agent zabbix active
+    Key: wmi.get[root\cimv2,SELECT FreeSpace FROM Win32_LogicalDisk WHERE DeviceID={$DISK_NAME}]
 
 ```
