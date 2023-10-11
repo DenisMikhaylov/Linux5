@@ -93,7 +93,7 @@ Host: CLIENTN
   Items
     Name: WMI object product baseboard
     Type: agent zabbix active
-    Key: wmi.get[root\cimv2,SELECT product FROM Win32_basedoard]
+    Key: wmi.get[root\cimv2,SELECT product FROM Win32_baseboard]
     Populates host inventory field: model
 ```
 ```
@@ -102,7 +102,7 @@ Host: CLIENTN
   Items
     Name: WMI object serial number baseboard
     Type: agent zabbix active
-    Key: wmi.get[root\cimv2,SELECT serialnumber FROM Win32_basedoard]
+    Key: wmi.get[root\cimv2,SELECT serialnumber FROM Win32_baseboard]
     Populates host inventory field: Chassis
 ```
 
@@ -149,6 +149,6 @@ Host: CLIENTN
   Items
     Name: WMI object disk {@DISK_NAME} freespace
     Type: agent zabbix active
-    Key: wmi.get[root\cimv2,SELECT FreeSpace FROM Win32_LogicalDisk WHERE DeviceID={$DISK_NAME}]
+    Key: wmi.get[root\cimv2,SELECT FreeSpace FROM Win32_LogicalDisk WHERE DeviceID='{$DISK_NAME}']
 
 ```
