@@ -147,7 +147,7 @@ Host: CLIENTN
 Host: CLIENTN
 ...
   Items
-    Name: WMI object disk {@DISK_NAME} freespace
+    Name: WMI object disk {$DISK_NAME} freespace
     Type: agent zabbix active
     Key: wmi.get[root\cimv2,SELECT FreeSpace FROM Win32_LogicalDisk WHERE DeviceID='{$DISK_NAME}']
 
