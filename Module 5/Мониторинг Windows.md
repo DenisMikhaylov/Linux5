@@ -6,7 +6,8 @@
 Alert - Actions - Auto registration 
   Name: Add Windows clients                                          # or Add Linux clients
   Conditions: Host name contains CLIENT                              # or client (lowercase) for linux
-  Action operations: 
+  Action operations:
+    Add host
     Add to host groups: Windows clients                              # or Linux clients
     Link to templates: Windows by Zabbix agent active                # or Linux by Zabbix agent active
                  
