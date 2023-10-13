@@ -46,9 +46,6 @@ Alert->Actions-> Discovery action
       Add to host groups: Discovered hosts            
       Link to templates:
               1. Windows by SNMP
-             2.Template SNMP Device
-             3.Template Module Generic SNMPv2
-             4.Template Module Interfaces Simple SNMPv2
       Set host inventory mode: Automatic
     Add
 ```
