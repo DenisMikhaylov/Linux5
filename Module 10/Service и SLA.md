@@ -28,7 +28,7 @@ Create service
 
 ```
 Create service
-Name Site
+Name: Site
   Tags:
     Name: zabbix
     Value: site
