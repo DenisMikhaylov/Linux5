@@ -3,6 +3,35 @@ URL Service and SLA create
 https://www.youtube.com/watch?v=5N5uK4vJsAY
 
 
+Добавляем теги к хостам
+
+```
+Host: Gate
+  Tags
+  Name: Monitoring
+  Value: Gate
+
+Host: Zabbix
+  Tags
+  Name: Monitoring
+
+  Value: zabbix
+
+Host: Windows
+ Tags
+  Name: Monitoring
+  Value: windows
+
+Host: ya.ru
+ Tags
+  Name: zabbix
+  Value: Site
+
+Host: google.com
+ Tags
+  Name: zabbix
+  Value: Site
+```
 Создание Service 
 
 ```
@@ -63,7 +92,7 @@ Name: Gate
     Name: zabbix host
     Value: gate
 Problem Tags
-  Name: Moniring
+  Name: Monitoring
   Operation: equals
   Value: Gate
 Add
@@ -75,7 +104,7 @@ Name: Zabbix
     Name: zabbix host
     Value: zabbix
 Problem Tags
-  Name: Moniring
+  Name: Monitoring
   Operation: equals
   Value: zabbix
 Add
@@ -87,7 +116,7 @@ Name: Windows
     Name: zabbix host
     Value: window
 Problem Tags
-  Name: Moniring
+  Name: Monitoring
   Operation: equals
   Value: windows
 Add
