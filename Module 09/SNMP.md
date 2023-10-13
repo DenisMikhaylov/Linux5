@@ -42,7 +42,8 @@ Alert->Actions-> Discovery action
     Conditions: 
       Discovery status: equals Up                 
       Add
-    Operations: 
+    Operations:
+      Add host
       Add to host groups: Discovered hosts            
       Link to templates:
               1. Windows by SNMP
