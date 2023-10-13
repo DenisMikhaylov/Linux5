@@ -10,7 +10,7 @@
 
 Включение SNMP на Windows 
 
-Добавить елмпонент Service SNMP и WMI for SNMP
+Добавить компонент Service SNMP и WMI for SNMP
 
 Настроить службу SNMP
 
