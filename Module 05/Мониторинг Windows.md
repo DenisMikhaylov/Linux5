@@ -27,7 +27,6 @@ LogFile=C:\Program Files\Zabbix Agent\zabbix_agentd.log
 ListenIP=0.0.0.0
 ServerActive=<ip address zabbix or Name>
 Hostname=CLIENTN
-StartAgents=0
 ```
 перезапустить службу агента
 
